@@ -1,0 +1,145 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    line-height: 1.6;
+}
+
+.head {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUA7qkntqz9hfjcTV_FtCYk_s7r3EhLHTeog&s);
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.head h2 {
+    color: #ffffff;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.cultural {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 3rem max(2rem, 5%);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.cultural-card {
+    background: white;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.cultural-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cultural-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.cultural-card:hover img {
+    transform: scale(1.05);
+}
+
+.cultural-card h3 {
+    margin: 1.2rem;
+    color: #333;
+    font-size: 1.25rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.cultural-card button {
+    background-color: #0891b2;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem auto 1.5rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cultural-card button:hover {
+    background-color: #0e7490;
+    transform: scale(1.05);
+}
+
+.cultural-card button a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+footer {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUA7qkntqz9hfjcTV_FtCYk_s7r3EhLHTeog&s);
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+footer a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+footer a:hover {
+    transform: scale(1.15);
+}
+
+footer img {
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+#footer {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .cultural {
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+    }
+    
+    .head {
+        height: 30vh;
+    }
+    
+    .cultural-card h3 {
+        font-size: 1.1rem;
+    }
+}

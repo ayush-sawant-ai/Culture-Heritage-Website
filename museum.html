@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Famous Museums of India</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #eef2f7;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #5f4b8b, #a28089);
+      color: white;
+      padding: 30px;
+      text-align: center;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .container-category {
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 95%;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .container-category h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      border-left: 6px solid #3498db;
+      padding-left: 12px;
+    }
+
+    .museum-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-evenly;
+    }
+
+    .museum-card {
+      background: #fdfdfd;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 30%;
+      min-width: 280px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .museum-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .museum-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .dropdown-btn {
+      background: linear-gradient(to right, #5f4b8b, #a28089);
+      color: white;
+      padding: 12px 16px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .dropdown-btn:hover {
+      background: linear-gradient(to right, #a28089, #5f4b8b);
+    }
+
+    .dropdown-content {
+      display: none;
+      padding: 15px;
+      background-color: #f4f8fc;
+      border-top: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 30px auto;
+      text-align: center;
+      background-color: #2c3e50;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 6px;
+      width: fit-content;
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .museum-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Famous Museums of India</h1>
+  </header>
+
+  <div class="container-category">
+    <h2>National Museums</h2>
+    <div class="museum-flex">
+
+      <div class="museum-card">
+        <img src="https://th.bing.com/th/id/R.c7e1b76619d1ac38f308c68083249f26?rik=i8zkn1tFMliyjg&riu=http%3a%2f%2findiaongo.in%2fwp-content%2fuploads%2f2016%2f06%2fnational-museum-delhi.jpg&ehk=utUJiefhZiB5412iDShmp1D%2bcQuR3Gml%2b35gNJJmf%2fg%3d&risl=&pid=ImgRaw&r=0" alt="National Museum Delhi" />
+        <button class="dropdown-btn">National Museum, Delhi</button>
+        <div class="dropdown-content">
+          <p><strong>Overview:</strong> One of the largest museums in India, featuring collections from pre-historic times to modern artworks.</p>
+          <p><strong>History:</strong> Foundation stone laid by Jawaharlal Nehru in 1949; opened to the public in 1960.</p>
+          <p><strong>Best Time:</strong> October to March.</p>
+          <p><strong>Specialities:</strong> Harappan artifacts, bronze sculptures, miniature paintings.</p>
+          <p><strong>Nearby Attractions:</strong> India Gate, Rashtrapati Bhavan.</p>
+          <p><strong>Food:</strong> Saravana Bhavan (South Indian), Andhra Bhavan Canteen.</p>
+          <p><strong>Restaurants:</strong> Bukhara, Indian Accent.</p>
+          <p><strong>Sweets:</strong> Daulat ki Chaat, Lassi from Bengali Market.</p>
+        </div>
+        <iframe src="https://www.google.com/maps?q=National+Museum+Delhi&output=embed"></iframe>
+      </div>
+
+      <div class="museum-card">
+        <img src="https://th.bing.com/th/id/OLC.qMFqpyc22d6jaw480x360?cb=iwc2&rs=1&pid=ImgDetMain" alt="Victoria Memorial" />
+        <button class="dropdown-btn">Victoria Memorial, Kolkata</button>
+        <div class="dropdown-content">
+          <p><strong>Overview:</strong> A majestic colonial building housing art and historical exhibits from the British era.</p>
+          <p><strong>History:</strong> Built in memory of Queen Victoria, construction began in 1906 and completed in 1921.</p>
+          <p><strong>Best Time:</strong> November to February.</p>
+          <p><strong>Specialities:</strong> British paintings, textiles, sculptures.</p>
+          <p><strong>Nearby Attractions:</strong> Maidan, Indian Museum, Kalighat Temple.</p>
+          <p><strong>Food:</strong> Park Street eateries, Peter Cat.</p>
+          <p><strong>Restaurants:</strong> Mocambo, 6 Ballygunge Place. </p>
+          <p><strong>Sweets:</strong>  Rosogolla, Mishti Doi, Puchka (street snack).</p>
+        </div>
+        <iframe src="https://www.google.com/maps?q=Victoria+Memorial+Kolkata&output=embed"></iframe>
+      </div>
+
+      <div class="museum-card">
+        <img src="https://www.trodly.com/pictures/upload/image/best-museums-india/Prince_of_Wales%20Museum_Mumbai.jpg" alt="CSMVS Mumbai"/>
+        <button class="dropdown-btn">CSMVS, Mumbai</button>
+        <div class="dropdown-content">
+          <p><strong>Overview:</strong>  A UNESCO heritage site, reflecting Indo-Saracenic architecture.</p>
+          <p><strong>History:</strong>Built in the early 20th century, formerly known as Prince of Wales Museum.</p>
+          <p><strong>Best Time:</strong>November to March.</p>
+          <p><strong>Specialities:</strong>  Ancient Indian sculpture, decorative arts, Indus Valley items.</p>
+          <p><strong>Nearby:</strong>Gateway of India, Marine Drive, Kala Ghoda Art District.</p>
+          <p><strong>Food:</strong> Leopold Café, Bademiya.</p>
+          <p><strong>Restaurants:</strong> Britannia & Co., Trishna.</p>
+          <p><strong>Sweets:</strong> Puran Poli, Mango Mastani.</p>
+        </div>
+        <iframe src="https://www.google.com/maps?q=CSMVS+Mumbai&output=embed"></iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container-category">
+    <h2>Archaeological Collections</h2>
+    <div class="museum-flex">
+
+      <div class="museum-card">
+        <img src="https://th.bing.com/th/id/R.14c7c7f848b270c4d4687749c07352ad?rik=cRgprHaB7f8KmQ&riu=http%3a%2f%2fimages.trvl-media.com%2fmedia%2fcontent%2fshared%2fimages%2ftravelguides%2fdestination%2f6053329%2fSalar-Jung-Museum-71509.jpg&ehk=wL90hn5qHloFrD58GmtIuXRyDcgsKvXnEwXEUPUH%2bP4%3d&risl=&pid=ImgRaw&r=0" alt="Salar Jung Museum"/>
+        <button class="dropdown-btn">Salar Jung Museum, Hyderabad</button>
+        <div class="dropdown-content">
+          <p><strong>Overview:</strong> A vast collection from different parts of the world including rare European and Asian artifacts.</p>
+          <p><strong>History:</strong> Collection curated by Nawab Salar Jung III; inaugurated in 1951.</p>
+          <p><strong>Best Time:</strong>October to February.</p>
+          <p><strong>Specialities:</strong>Veiled Rebecca, jade collection, Persian carpets.</p>
+          <p><strong>Nearby Ttractions:</strong> Charminar, Mecca Masjid, Chowmahalla Palace.</p>
+          <p><strong>Food:</strong> Shadab Hotel, Paradise Biryani.</p>
+          <p><strong>Restaurants:</strong>  Bawarchi, Café Bahar.</p>
+          <p><strong>Sweets:</strong> Qubani ka Meetha, Irani Chai.</p>
+        </div>
+        <iframe src="https://www.google.com/maps?q=Salar+Jung+Museum+Hyderabad&output=embed"></iframe>
+      </div>
+
+      <div class="museum-card">
+        <img src="https://th.bing.com/th/id/R.d12d587cf2dcbd03a654bbd596de077d?rik=M7QJ1AZNtesvsA&riu=http%3a%2f%2f1.bp.blogspot.com%2f-YI6y__W2fmw%2fUhCfkHz73KI%2fAAAAAAAABoI%2frGaMhYwoh6U%2fs1600%2fArchaeological%2bMuseum%2bSarnath.jpg&ehk=Eu8zGdGBuBwUpi80jdjKmtVRgS0Mmn9Syi89gvTmxjw%3d&risl=&pid=ImgRaw&r=0" alt="Sarnath Museum"/>
+        <button class="dropdown-btn">Archaeological Museum, Sarnath</button>
+        <div class="dropdown-content">
+          <p><strong>Overview:</strong> Repository of Buddhist cultural heritage and ancient sculptures.</p>
+          <p><strong>History:</strong> Established in 1910; displays the Ashokan Lion Capital (India’s emblem).</p>
+          <p><strong>Best Time:</strong> November to February.</p>
+          <p><strong>Specialities:</strong> Mauryan and Gupta era sculptures, Buddhist relics.</p>
+          <p><strong>Nearby Attractions:</strong> Dhamek Stupa, Varanasi Ghats, Mulagandha Kuti Vihar.</p>
+          <p><strong>Food:</strong> Local Tibetan and Indian food stalls.</p>
+          <p><strong>Restaurants:</strong> Kashi Chaat.</p>
+          <p><strong>Sweets:</strong> Malaiyo, Rabri, Lemon Tea.</p>
+        </div>
+        <iframe src="https://www.google.com/maps?q=Sarnath+Museum+Varanasi&output=embed"></iframe>
+      </div>
+
+      <div class="museum-card">
+        <img src="https://ahmedabadtourism.in/images/places-to-visit/headers/archaeological-museum-lothal-ahmedabad-tourism-entry-fee-timings-holidays-reviews-header.jpg" alt="Lothal Museum"/>
+        <button class="dropdown-btn">Lothal Site Museum, Gujarat</button>
+        <div class="dropdown-content">
+          <p><strong>Overview:</strong> A window into the maritime activities of the Indus Valley Civilization.</p>
+          <p><strong>History:</strong> Excavations began in the 1950s; museum showcases ancient dockyard remains.</p>
+          <p><strong>Best Time:</strong>  October to March.</p>
+          <p><strong>Specialities:</strong> Beads, terracotta ornaments, scale models of city layouts.</p>
+          <p><strong>Nearby Attractions:</strong> Modhera Sun Temple, Nal Sarovar Bird Sanctuary.</p>
+          <p><strong>Food:</strong> Kathiyawadi cuisine, street vendors.</p>
+          <p><strong>Restaurants:</strong> Agashiye (Ahmedabad), Vishalla.</p>
+          <p><strong>Sweets:</strong> Fafda-Jalebi, Chaas, Mohanthal..</p>
+        </div>
+        <iframe src="https://www.google.com/maps?q=Lothal+Gujarat&output=embed"></iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container-category">
+    <h2>Artefact Conservation Centers</h2>
+    <div class="museum-flex">
+
+      <div class="museum-card">
+        <img src="https://media.assettype.com/knocksense/import/22616089/origin.jpg?w=1200&ar=40:21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100" alt="NRLC Lucknow"/>
+        <button class="dropdown-btn">NRLC, Lucknow</button>
+        <div class="dropdown-content">
+          <p><strong>Overview:</strong> India’s apex institution for scientific conservation of cultural property.</p>
+          <p><strong>History:</strong> Established in 1976 under the Archaeological Survey of India.</p>
+          <p><strong>Best Time:</strong> November to February.</p>
+          <p><strong>Specialities:</strong> Restoration of paintings, manuscripts, and antiquities.</p>
+          <p><strong>Nearby Attractions:</strong> Rumi Darwaza, British Residency.</p>
+          <p><strong>Food:</strong> Tunday Kababi, Wahid Biryani.</p>
+          <p><strong>Restaurants:</strong> Oudhyana, Dastarkhwan.</p>
+          <p><strong>Sweets:</strong> Makhan Malai, Thandai, Sheermal.</p>
+        </div>
+        <iframe src="https://www.google.com/maps?q=NRLC+Lucknow&output=embed"></iframe>
+      </div>
+
+      <div class="museum-card">
+        <img src="https://lh3.googleusercontent.com/jOCfrNokGkA_IQKG1WXw4itVJGjmhV653tdEcwucLixuACCpIIArYpao6_cNdi11C7k" alt="INTACH Delhi"/>
+        <button class="dropdown-btn">INTACH, New Delhi</button>
+        <div class="dropdown-content">
+          <p><strong>Overview:</strong> Works towards the conservation of India's architectural and cultural heritage.</p>
+          <p><strong>History:</strong> Established in 1984 by Rajiv Gandhi.</p>
+          <p><strong>Best Time:</strong> Year-round.</p>
+          <p><strong>Specialities:</strong> Restoration of monuments, heritage education.</p>
+          <p><strong>Nearby Attractions:</strong> Humayun’s Tomb, Lodhi Art District.</p>
+          <p><strong>Food:</strong> Khan Market cafés, Safdarjung area.</p>
+          <p><strong>Restaurants:</strong> The All American Diner, SodaBottleOpenerWala.</p>
+          <p><strong>Sweets:</strong> Kulfi Falooda, Masala Chai, Jalebi from Chandni Chowk.</p>
+        </div>
+        <iframe src="https://www.google.com/maps?q=INTACH+New+Delhi&output=embed"></iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <a href="secondpage.html" class="back-btn">Back to Main Page</a>
+
+  <script>
+    document.querySelectorAll(".dropdown-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+        const content = btn.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+</body>
+</html>

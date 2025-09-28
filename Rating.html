@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating System</title>
+    <style>
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+        }
+
+        .rating input[type="radio"] {
+            display: none;
+        }
+
+        .rating label {
+            font-size: 2em;
+            color: #ddd;
+            cursor: pointer;
+        }
+
+        .rating label:hover,
+        .rating label:hover ~ label,
+        .rating input[type="radio"]:checked ~ label {
+            color: #f2c464;
+        }
+
+        .rating-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="rating-container">
+        <h2>Rate Our Website</h2>
+        <form id="rating-form">
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">&#9733;</label>
+            </div>
+            <button class="submit-btn" type="submit">Submit Rating</button>
+        </form>
+        <p id="rating-message"></p>
+    </div>
+
+    <script>
+        const form = document.getElementById('rating-form');
+        const ratingMessage = document.getElementById('rating-message');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const rating = document.querySelector('input[name="rating"]:checked').value;
+            ratingMessage.textContent = `Thank you for rating us ${rating} stars!`;
+        });
+    </script>
+</body>
+</html>

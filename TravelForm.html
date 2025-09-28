@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Enquiry Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #d0e6f7 100%);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(to right, #5f4b8b, #a28089 75%, #4a90e2 100%);
+      color: white;
+      padding: 30px;
+      text-align: center;
+      animation: fadeInDown 1s ease-in-out;
+      box-shadow: 0 6px 24px rgba(76, 110, 245, 0.09);
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.10), 0 2px 8px #a0c4ff33;
+      animation: fadeInUp 1.2s ease;
+      border-top: 6px solid #4a90e2;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      margin-top: 40px;
+      font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
+      letter-spacing: 2px;
+      color:white;
+      font-size: 2.5rem;
+      text-align: center;
+    }
+    label {
+      font-weight: 600;
+      color: #1976d2;
+      margin-bottom: 6px;
+      font-size: 1.07rem;
+      letter-spacing: 0.5px;
+    }
+    input[type="text"] {
+      border: 1.5px solid #b3e5fc;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 1.05rem;
+      transition: border-color 0.2s;
+      background: #f9fcff;
+      outline: none;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+    }
+    input[type="text"]:focus {
+      border-color: #0288d1;
+      background: #fff;
+    }
+    button[type="submit"], .back-btn {
+      background: linear-gradient(to right, #5f4b8b, #a28089 75%, #4a90e2 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 0;
+      font-size: 1.13rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(21, 101, 192, 0.07);
+      margin-top: 6px;
+      transition: background 0.2s, box-shadow 0.2s;
+      width: 100%;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    button[type="submit"]:hover, .back-btn:hover {
+      background: linear-gradient(90deg, #1976d2 60%, #b3e5fc 100%);
+      box-shadow: 0 4px 18px rgba(21, 101, 192, 0.14);
+    }
+    #results {
+      max-width: 520px;
+      width: 100%;
+      margin: 0 auto 28px auto;
+      background: rgba(255,255,255,0.95);
+      border-radius: 18px;
+      box-shadow: 0 6px 24px rgba(21, 101, 192, 0.09);
+      padding: 28px 24px 20px 24px;
+      font-size: 1.07rem;
+      color: #263238;
+      margin-top: 12px;
+    }
+    .section {
+      margin-bottom: 22px;
+    }
+    .section-title {
+      font-weight: bold;
+      background: linear-gradient(90deg, #0288d1, #a28089, #fbc531, #4a90e2, #5f4b8b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 7px;
+      font-size: 1.13rem;
+      letter-spacing: 0.5px;
+    }
+    ul {
+      padding-left: 21px;
+      margin: 0;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    iframe {
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(21, 101, 192, 0.08);
+      margin-top: 8px;
+    }
+    .weather-card {
+      background: linear-gradient(120deg, #a0c4ff 60%, #50e3c2 100%);
+      color: #2c3e50;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px #4a90e233;
+      padding: 22px 18px;
+      margin: 18px 0 18px 0;
+      text-align: center;
+      font-size: 1.1rem;
+      transition: box-shadow 0.2s;
+    }
+    .weather-card:hover {
+      box-shadow: 0 8px 30px #4a90e266;
+    }
+    .back-btn {
+      display: block;
+      width: 180px;
+      margin: 0 auto 36px auto;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      box-shadow: 0 2px 8px #4a90e233;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .back-btn:hover {
+      background: linear-gradient(90deg, #4a90e2 60%, #50e3c2 100%);
+      box-shadow: 0 6px 20px #4a90e266;
+    }
+    @media (max-width: 600px) {
+      section, #results {
+        padding: 18px 8px 14px 8px;
+        border-radius: 10px;
+      }
+      h1 {
+        font-size: 1.5rem;
+        margin-top: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Travel Enquiry Form</h1>
+    <p>Plan your next adventure with live weather and travel info!</p>
+  </header>
+  <section>
+    <form id="travelForm" class="mb-4">
+      <label for="state">Enter Indian State:</label>
+      <input type="text" id="state" name="state" required placeholder="e.g. Maharashtra">
+
+      <label for="city">Enter City (for weather):</label>
+      <input type="text" id="city" name="city" required placeholder="e.g. Mumbai">
+
+      <button type="submit">Get Travel Info</button>
+    </form>
+
+    <div id="results"></div>
+    <button class="back-btn" onclick="window.location.href='index.html'">Back</button>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const mockPlaces = {
+      "Andhra Pradesh": [
+        "Tirupati Balaji Temple","Araku Valley","Vijayawada Kanaka Durga Temple","Lepakshi","Amaravati"
+      ],
+      "Arunachal Pradesh": [
+        "Tawang Monastery","Ziro Valley","Bomdila","Namdapha National Park","Sela Pass"
+      ],
+      "Assam": [
+        "Kaziranga National Park","Majuli Island","Kamakhya Temple","Manas National Park","Sivasagar"
+      ],
+      "Bihar": [
+        "Mahabodhi Temple, Bodh Gaya","Nalanda University Ruins","Vikramshila Ruins","Vaishali","Patna Sahib Gurudwara"
+      ],
+      "Chhattisgarh": [
+        "Chitrakote Falls","Barnawapara Wildlife Sanctuary","Bhoramdeo Temple","Kanger Valley National Park","Sirpur"
+      ],
+      "Goa": [
+        "Calangute Beach","Baga Beach","Dudhsagar Falls","Basilica of Bom Jesus","Fort Aguada"
+      ],
+      "Gujarat": [
+        "Statue of Unity","Somnath Temple","Gir National Park","Rann of Kutch","Dwarkadhish Temple"
+      ],
+      "Haryana": [
+        "Kurukshetra","Sultanpur Bird Sanctuary","Pinjore Gardens","Morni Hills","Surajkund"
+      ],
+      "Himachal Pradesh": [
+        "Shimla","Manali","Dharamshala","Kullu","Spiti Valley"
+      ],
+      "Jharkhand": [
+        "Betla National Park","Hundru Falls","Netarhat","Parasnath Hill","Dassam Falls"
+      ],
+      "Karnataka": [
+        "Hampi","Mysore Palace","Coorg","Gokarna","Badami Caves"
+      ],
+      "Kerala": [
+        "Alleppey Backwaters","Munnar","Kochi Fort","Thekkady","Wayanad"
+      ],
+      "Madhya Pradesh": [
+        "Khajuraho Temples","Kanha National Park","Bandhavgarh National Park","Sanchi Stupa","Bhimbetka Caves"
+      ],
+      "Maharashtra": [
+        "Gateway of India","Ajanta Caves","Marine Drive","Shirdi","Mahabaleshwar"
+      ],
+      "Manipur": [
+        "Loktak Lake","Kangla Fort","Keibul Lamjao National Park","Imphal War Cemetery","Shri Govindajee Temple"
+      ],
+      "Meghalaya": [
+        "Cherrapunji","Living Root Bridges","Shillong","Mawsynram","Dawki River"
+      ],
+      "Mizoram": [
+        "Aizawl","Vantawng Falls","Reiek","Phawngpui National Park","Tam Dil"
+      ],
+      "Nagaland": [
+        "Kohima War Cemetery","Dzukou Valley","Hornbill Festival","Mokokchung","Japfu Peak"
+      ],
+      "Odisha": [
+        "Konark Sun Temple","Jagannath Temple, Puri","Chilika Lake","Lingaraja Temple","Udayagiri and Khandagiri Caves"
+      ],
+      "Punjab": [
+        "Golden Temple","Wagah Border","Jallianwala Bagh","Anandpur Sahib","Sheesh Mahal, Patiala"
+      ],
+      "Rajasthan": [
+        "Jaipur","Udaipur","Jaisalmer Fort","Mount Abu","Ranthambore National Park"
+      ],
+      "Sikkim": [
+        "Gangtok","Tsomgo Lake","Nathula Pass","Pelling","Yumthang Valley"
+      ],
+      "Tamil Nadu": [
+        "Meenakshi Temple, Madurai","Ooty","Kodaikanal","Mahabalipuram","Rameswaram"
+      ],
+      "Telangana": [
+        "Charminar","Golconda Fort","Ramoji Film City","Warangal Fort","Nagarjuna Sagar Dam"
+      ],
+      "Tripura": [
+        "Ujjayanta Palace","Neermahal","Tripura Sundari Temple","Jampui Hills","Sepahijala Wildlife Sanctuary"
+      ],
+      "Uttar Pradesh": [
+        "Taj Mahal","Varanasi Ghats","Fatehpur Sikri","Sarnath","Jhansi Fort"
+      ],
+      "Uttarakhand": [
+        "Haridwar","Rishikesh","Nainital","Jim Corbett National Park","Valley of Flowers"
+      ],
+      "West Bengal": [
+        "Victoria Memorial","Sundarbans","Darjeeling","Howrah Bridge","Kalimpong"
+      ]
+    };
+
+    const mockCost = {
+      "Andhra Pradesh": "₹13,000 - ₹21,000",
+      "Arunachal Pradesh": "₹18,000 - ₹28,000",
+      "Assam": "₹15,000 - ₹24,000",
+      "Bihar": "₹11,000 - ₹18,000",
+      "Chhattisgarh": "₹12,000 - ₹19,000",
+      "Goa": "₹9,000 - ₹15,000",
+      "Gujarat": "₹13,000 - ₹21,000",
+      "Haryana": "₹8,000 - ₹13,000",
+      "Himachal Pradesh": "₹13,000 - ₹20,000",
+      "Jharkhand": "₹11,000 - ₹17,000",
+      "Karnataka": "₹14,000 - ₹22,000",
+      "Kerala": "₹10,000 - ₹18,000",
+      "Madhya Pradesh": "₹12,000 - ₹20,000",
+      "Maharashtra": "₹12,000 - ₹20,000",
+      "Manipur": "₹16,000 - ₹25,000",
+      "Meghalaya": "₹16,000 - ₹25,000",
+      "Mizoram": "₹17,000 - ₹27,000",
+      "Nagaland": "₹17,000 - ₹27,000",
+      "Odisha": "₹12,000 - ₹19,000",
+      "Punjab": "₹10,000 - ₹16,000",
+      "Rajasthan": "₹13,000 - ₹22,000",
+      "Sikkim": "₹16,000 - ₹25,000",
+      "Tamil Nadu": "₹14,000 - ₹22,000",
+      "Telangana": "₹13,000 - ₹20,000",
+      "Tripura": "₹15,000 - ₹23,000",
+      "Uttar Pradesh": "₹10,000 - ₹17,000",
+      "Uttarakhand": "₹11,000 - ₹18,000",
+      "West Bengal": "₹13,000 - ₹21,000"
+    };
+
+    const mockDistance = {
+      "Andhra Pradesh": `<iframe src="https://www.google.com/maps?q=Andhra+Pradesh,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Arunachal Pradesh": `<iframe src="https://www.google.com/maps?q=Arunachal+Pradesh,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Assam": `<iframe src="https://www.google.com/maps?q=Assam,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Bihar": `<iframe src="https://www.google.com/maps?q=Bihar,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Chhattisgarh": `<iframe src="https://www.google.com/maps?q=Chhattisgarh,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Goa": `<iframe src="https://www.google.com/maps?q=Goa,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Gujarat": `<iframe src="https://www.google.com/maps?q=Gujarat,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Haryana": `<iframe src="https://www.google.com/maps?q=Haryana,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Himachal Pradesh": `<iframe src="https://www.google.com/maps?q=Himachal+Pradesh,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Jharkhand": `<iframe src="https://www.google.com/maps?q=Jharkhand,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Karnataka": `<iframe src="https://www.google.com/maps?q=Karnataka,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Kerala": `<iframe src="https://www.google.com/maps?q=Kerala,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Madhya Pradesh": `<iframe src="https://www.google.com/maps?q=Madhya+Pradesh,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Maharashtra": `<iframe src="https://www.google.com/maps?q=Maharashtra,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Manipur": `<iframe src="https://www.google.com/maps?q=Manipur,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Meghalaya": `<iframe src="https://www.google.com/maps?q=Meghalaya,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Mizoram": `<iframe src="https://www.google.com/maps?q=Mizoram,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Nagaland": `<iframe src="https://www.google.com/maps?q=Nagaland,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Odisha": `<iframe src="https://www.google.com/maps?q=Odisha,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Punjab": `<iframe src="https://www.google.com/maps?q=Punjab,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Rajasthan": `<iframe src="https://www.google.com/maps?q=Rajasthan,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Sikkim": `<iframe src="https://www.google.com/maps?q=Sikkim,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Tamil Nadu": `<iframe src="https://www.google.com/maps?q=Tamil+Nadu,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Telangana": `<iframe src="https://www.google.com/maps?q=Telangana,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Tripura": `<iframe src="https://www.google.com/maps?q=Tripura,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Uttar Pradesh": `<iframe src="https://www.google.com/maps?q=Uttar+Pradesh,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "Uttarakhand": `<iframe src="https://www.google.com/maps?q=Uttarakhand,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+      "West Bengal": `<iframe src="https://www.google.com/maps?q=West+Bengal,+India&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+    };
+
+    const weatherApiKey = "c2608db9865badecfd0ad84bd1c5cbfd";
+
+    $('#travelForm').on('submit', function(e) {
+      e.preventDefault();
+      const state = $('#state').val().trim();
+      const city = $('#city').val().trim();
+      if (!state || !city) return;
+
+      const distanceText = mockDistance[state] || "Distance data not available";
+      const places = mockPlaces[state] || ["No data available"];
+      const placesList = places.map(place => `<li>${place}</li>`).join("");
+      const cost = mockCost[state] || "Cost estimate not available";
+
+      $('#results').html(`
+        <div class="section">
+          <div class="section-title">Distance / Map:</div>
+          <div>${distanceText}</div>
+        </div>
+        <div class="section">
+          <div class="section-title">Current Weather:</div>
+          <div id="weatherSection" class="weather-card">Loading weather...</div>
+        </div>
+        <div class="section">
+          <div class="section-title">Places to Travel:</div>
+          <ul>${placesList}</ul>
+        </div>
+        <div class="section">
+          <div class="section-title">Estimated Travel Cost:</div>
+          <div>${cost}</div>
+        </div>
+      `);
+
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${weatherApiKey}&units=metric`;
+
+      $.getJSON(url, function(data) {
+        if (data.cod === 200) {
+          $('#weatherSection').html(`
+            <strong>${data.name}, ${data.sys.country}</strong><br>
+            <span>Temperature: ${data.main.temp} °C</span><br>
+            <span>Weather: ${data.weather[0].main} (${data.weather[0].description})</span><br>
+            <span>Humidity: ${data.main.humidity}%</span><br>
+            <span>Wind: ${data.wind.speed} m/s</span><br>
+          `);
+        } else {
+          $('#weatherSection').html(`<span>Weather data not found for "${city}".</span>`);
+        }
+      }).fail(function() {
+        $('#weatherSection').html("<span>Error fetching weather data.</span>");
+      });
+    });
+  </script>
+</body>
+</html>
